@@ -8,13 +8,15 @@
 #include "app/guiobserver.h"
 #include "app/mqttobserver.h"
 #include "app/businessobserver.h"
+#include "hal/mcusimtempdrv.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    //1. 创建sensor实例
-    TemperatureSensor tempSensor;
+    //1. 创建sensor实例：注入MCU驱动，换平台只需替换注入的驱动实现
+    McuSimTempDrv simDrv;
+    TemperatureSensor tempSensor(&simDrv);
     tempSensor.init();
 
     //2. SensorManager

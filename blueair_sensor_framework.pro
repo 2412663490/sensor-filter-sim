@@ -12,7 +12,7 @@ SOURCES += \
         sensor/filters/movingaveragefilter.cpp \
         sensor/filters/medianfilter.cpp \
         sensor/filters/kalmanfilter.cpp \
-        sim/mcu_sim_drv.cpp
+        hal/mcusimtempdrv.cpp
 
 HEADERS += \
         sensor/isensor.h \
@@ -26,5 +26,6 @@ HEADERS += \
         app/guiobserver.h \
         app/mqttobserver.h \
         app/businessobserver.h \
-        sim/mcu_sim_drv.h \
+        hal/itempdrv.h \
+        hal/mcusimtempdrv.h
 

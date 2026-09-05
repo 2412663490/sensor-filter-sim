@@ -1,12 +1,12 @@
-#include "mcu_sim_drv.h"
+#include "mcusimtempdrv.h"
 #include <random>
 
-bool McuTempDrv::halInit()
+bool McuSimTempDrv::halInit()
 {
     return true;
 }
 
-bool McuTempDrv::halReadTemp(float &out)
+bool McuSimTempDrv::halReadTemp(float &out)
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
